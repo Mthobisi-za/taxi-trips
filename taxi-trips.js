@@ -10,13 +10,13 @@ module.exports = function(pool) {
     }
     async function findTaxisForRegion(region) {
         if (region == 'Durban') {
-            var data = (await pool.query(`select *  from taxi where starts_str = $1`, ['ND'])).rows
+            var data = (await pool.query(`select reg_num,starts_str from taxi where starts_str = $1`, ['ND'])).rows
             return data
         } else if (region == 'Cape Town') {
-            var data = (await pool.query(`select *  from taxi where starts_str = $1`, ['CA'])).rows
+            var data = (await pool.query(`select reg_num,starts_str from taxi where starts_str = $1`, ['CA'])).rows
             return data
         } else if (region == 'Gauteng') {
-            var data = (await pool.query(`select *  from taxi where starts_str = $1`, ['GP'])).rows
+            var data = (await pool.query(`select reg_num,starts_str from taxi where starts_str = $1`, ['GP'])).rows
             return data
         }
     }

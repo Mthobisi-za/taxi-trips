@@ -38,38 +38,32 @@ describe('Taxi Trips', function() {
     it('should find all the taxis for a region', async function() {
         const taxiTrips = TaxiTrips(pool);
         var cpdata = [{
-                id: 1,
                 reg_num: 'CA-081-050',
                 starts_str: 'CA'
             },
             {
-                id: 2,
                 reg_num: 'CA-123-100',
                 starts_str: 'CA'
             },
             {
-                id: 3,
                 reg_num: 'CA-410-070',
                 starts_str: 'CA'
             }
         ];
         var dbdata = [
-            { id: 7, reg_num: 'ND-081-050', starts_str: 'ND' },
-            { id: 8, reg_num: 'ND-123-100', starts_str: 'ND' },
-            { id: 9, reg_num: 'ND-410-070', starts_str: 'ND' }
+            { reg_num: 'ND-081-050', starts_str: 'ND' },
+            { reg_num: 'ND-123-100', starts_str: 'ND' },
+            { reg_num: 'ND-410-070', starts_str: 'ND' }
         ];
         var gpdata = [{
-                id: 4,
                 reg_num: 'GP-081-050',
                 starts_str: 'GP'
             },
             {
-                id: 5,
                 reg_num: 'GP-123-100',
                 starts_str: 'GP'
             },
             {
-                id: 6,
                 reg_num: 'GP-410-070',
                 starts_str: 'GP'
             }
