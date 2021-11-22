@@ -79,50 +79,32 @@ describe('Taxi Trips', function() {
         const taxiTrips = TaxiTrips(pool);
         const cadata = [{
                 fare: '10.00',
-                id: 10,
-                region_id: 2,
-                routes_id: 2,
-                taxi_id: 1
+                "regnum": "CA-081-050"
             },
             {
                 fare: '15.00',
-                id: 11,
-                region_id: 2,
-                routes_id: 3,
-                taxi_id: 1
+                "regnum": "CA-081-050"
             },
             {
                 fare: '9.00',
-                id: 12,
-                region_id: 2,
-                routes_id: 1,
-                taxi_id: 1
+                "regnum": "CA-081-050"
             }
         ]
         const gpdata = [{
                 fare: '10.00',
-                id: 25,
-                region_id: 3,
-                routes_id: 5,
-                taxi_id: 6
+                "regnum": "GP-410-070"
             },
             {
                 fare: '15.00',
-                id: 26,
-                region_id: 3,
-                routes_id: 6,
-                taxi_id: 6
+                "regnum": "GP-410-070"
             },
             {
                 fare: '9.00',
-                id: 27,
-                region_id: 3,
-                routes_id: 4,
-                taxi_id: 6
+                "regnum": "GP-410-070"
             }
         ]
-        assert.deepStrictEqual(cadata, await taxiTrips.findTripsByRegNumber('CA-081-050'));
-        assert.deepStrictEqual(gpdata, await taxiTrips.findTripsByRegNumber('GP-410-070'));
+        assert.deepEqual(cadata, await taxiTrips.findTripsByRegNumber('CA-081-050'));
+        assert.deepEqual(gpdata, await taxiTrips.findTripsByRegNumber('GP-410-070'));
 
     });
 

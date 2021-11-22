@@ -24,7 +24,7 @@ module.exports = function(pool) {
         //first get the id for reg number
         var id = (await pool.query("select id from taxi where reg_num = $1", [regNum])).rows
         var actualId = id[0].id;
-        var data = (await pool.query("select * from trip where taxi_id = $1", [actualId])).rows
+        var data = (await pool.query("select fare, (select reg_num from taxi where id = taxi_id) as regNum from trip where taxi_id = $1", [actualId])).rows
         return data;
     }
     async function findTripsByRegion(region) {
