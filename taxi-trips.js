@@ -49,6 +49,12 @@ module.exports = function(pool) {
         var data = (await pool.query(`select sum(fare) as income from trip`)).rows
         return data
     }
+    async function findTotalIncomeByRegion(region) {
+        var id = (await pool.query(`select id from region where name_of_region = $1`, [region])).rows
+        var actualId = id[0].id;
+        var data = (await pool.query(`select sum(fare) as income from trip where  region_id = $1 group by region_id`, [actualId])).rows
+        return data
+    }
     return {
         totalTripCount,
         findAllRegions,
@@ -57,7 +63,8 @@ module.exports = function(pool) {
         findTripsByRegion,
         findIncomeByRegNumber,
         findTotalIncomePerTaxi,
-        findTotalIncome
+        findTotalIncome,
+        findTotalIncomeByRegion
     }
 
 }

@@ -172,6 +172,11 @@ describe('Taxi Trips', function() {
         const taxiTrips = TaxiTrips(pool);
         assert.deepStrictEqual('450.00', (await taxiTrips.findTotalIncome())[0].income);
     });
+    it("Find the total amount income for each of the regions", async() => {
+        const taxiTrips = TaxiTrips(pool);
+        const data = '133.00';
+        assert.deepEqual(data, (await taxiTrips.findTotalIncomeByRegion("Gauteng"))[0].income)
+    })
 
     after(function() {
         pool.end();
