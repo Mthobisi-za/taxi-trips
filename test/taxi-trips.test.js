@@ -68,9 +68,9 @@ describe('Taxi Trips', function() {
                 starts_str: 'GP'
             }
         ];
-        assert.deepStrictEqual(dbdata, await taxiTrips.findTaxisForRegion('Durban'));
-        assert.deepStrictEqual(cpdata, await taxiTrips.findTaxisForRegion('Cape Town'));
-        assert.deepStrictEqual(gpdata, await taxiTrips.findTaxisForRegion('Gauteng'));
+        assert.deepEqual(dbdata, await taxiTrips.findTaxisForRegion('Durban'));
+        assert.deepEqual(cpdata, await taxiTrips.findTaxisForRegion('Cape Town'));
+        assert.deepEqual(gpdata, await taxiTrips.findTaxisForRegion('Gauteng'));
 
     });
 
