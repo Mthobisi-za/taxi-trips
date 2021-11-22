@@ -52,7 +52,6 @@ insert into trip( fare, routes_id, taxi_id, region_id) values ( 20.00, 4, 6, 3);
 
 
 
-
 insert into taxi(id, reg_num, starts_str) values (7, 'ND-081-050', 'ND');
 insert into trip( fare, routes_id, taxi_id, region_id) values ( 10.00, 8, 7, 1);
 insert into trip( fare, routes_id, taxi_id, region_id) values ( 35.00, 7, 7, 1);

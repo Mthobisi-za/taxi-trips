@@ -10,4 +10,3 @@ foreign key (routes_id) references route(id),
 foreign key (taxi_id) references taxi(id),
 foreign key (region_id) references region(id)
 );
-
