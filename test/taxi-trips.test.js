@@ -95,11 +95,11 @@ describe('Taxi Trips', function() {
                 "regnum": "GP-410-070"
             },
             {
-                fare: '15.00',
+                "fare": "9.00",
                 "regnum": "GP-410-070"
             },
             {
-                fare: '9.00',
+                "fare": "20.00",
                 "regnum": "GP-410-070"
             }
         ]
@@ -121,7 +121,7 @@ describe('Taxi Trips', function() {
     it('find the total income for a given reg number', async function() {
         const taxiTrips = TaxiTrips(pool);
         assert.deepStrictEqual('34.00', (await taxiTrips.findIncomeByRegNumber('CA-081-050'))[0].income);
-        assert.deepStrictEqual('34.00', (await taxiTrips.findIncomeByRegNumber('ND-410-070'))[0].income);
+        assert.deepStrictEqual('60.00', (await taxiTrips.findIncomeByRegNumber('ND-410-070'))[0].income);
     });
 
     it('find the total income for each taxi', async function() {
@@ -132,35 +132,35 @@ describe('Taxi Trips', function() {
                 regnum: 'CA-081-050'
             },
             {
-                income: '34.00',
+                income: '65.00',
                 regnum: 'CA-123-100'
             },
             {
-                income: '34.00',
+                income: '49.00',
                 regnum: 'CA-410-070'
             },
             {
-                income: '34.00',
+                income: '44.00',
                 regnum: 'GP-081-050'
             },
             {
-                income: '34.00',
+                income: '50.00',
                 regnum: 'GP-123-100'
             },
             {
-                income: '34.00',
+                income: '39.00',
                 regnum: 'GP-410-070'
             },
             {
-                income: '34.00',
+                income: '55.00',
                 regnum: 'ND-081-050'
             },
             {
-                income: '34.00',
+                income: '54.00',
                 regnum: 'ND-123-100'
             },
             {
-                income: '34.00',
+                income: '60.00',
                 regnum: 'ND-410-070'
             }
         ]
@@ -170,10 +170,8 @@ describe('Taxi Trips', function() {
 
     it('find the total income for all the taxis', async function() {
         const taxiTrips = TaxiTrips(pool);
-        assert.deepStrictEqual('306.00', (await taxiTrips.findTotalIncome())[0].income);
+        assert.deepStrictEqual('450.00', (await taxiTrips.findTotalIncome())[0].income);
     });
-
-
 
     after(function() {
         pool.end();

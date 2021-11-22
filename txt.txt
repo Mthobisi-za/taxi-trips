@@ -1,0 +1,38 @@
+[
+{
+  income: '34.00',
+  regnum: 'CA-081-050'
+},
+{
+  income: '65.00',
+  regnum: 'CA-123-100'
+},
+{
+  income: '49.00',
+  regnum: 'CA-410-070'
+},
+{
+  income: '44.00',
+  regnum: 'GP-081-050'
+},
+{
+  income: '50.00',
+  regnum: 'GP-123-100'
+},
+{
+  income: '39.00',
+  regnum: 'GP-410-070'
+},
+{
+  income: '55.00',
+  regnum: 'ND-081-050'
+},
+{
+  income: '54.00',
+  regnum: 'ND-123-100'
+},
+{
+  income: '60.00',
+  regnum: 'ND-410-070'
+}
+]
